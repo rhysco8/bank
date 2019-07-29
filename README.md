@@ -43,11 +43,10 @@ date || credit || debit || balance
 
 I'll implement features in this order:
 1. Deposit and withdrawals change balance
-2. Transactions are logged
-3. Statement print out displays credit, debit and balance
-4. Statement print out is in reverse chronological order
-5. Transaction date is logged
-6. Statement print out also displays date
+2. Statement print out displays credit, debit and balance
+3. Statement print out is in reverse chronological order
+4. Transaction date is logged
+5. Statement print out also displays date
 
 ### User stories
 
@@ -69,35 +68,32 @@ So that I have a way of tracking how much money is in my account,
 I want my account balance to be recorded.
 ```
 
-#### 2. Transactions are logged
+#### 2. Statement print out displays credit, debit and balance
 
 ```
 As a User,
 So that I can keep track of deposits and withdrawals,
 I want my transactions to be recorded.
-```
-#### 3. Statement print out displays credit, debit and balance
 
-```
 As a User,
 So that I can see my transactions and how they affected my balance,
 I want to be able to print my account statement
 ```
-#### 4. Statement print out is in reverse chronological order
+#### 3. Statement print out is in reverse chronological order
 
 ```
 As a User,
 So that I can see my most recent transactions first,
 I want my account statement print out to be in reverse chronological order.
 ```
-#### 5. Transaction date is logged
+#### 4. Transaction date is logged
 
 ```
 As a User,
 So that I can keep track of when I've made deposits and withdrawals,
 I want the date of my transactions to be recorded.
 ```
-#### 6. Statement print out also displays date
+#### 5. Statement print out also displays date
 
 ```
 As a User,

@@ -1,6 +1,6 @@
 require 'bank_account'
 
-describe BankAccount do
+RSpec.describe BankAccount do
 
   before(:each) do
     @account = described_class.new
@@ -21,7 +21,7 @@ describe BankAccount do
       expect { @account.withdraw(1) }.to change { @account.balance }.by(-1)
     end
 
-    it "decereases balance by 100" do
+    it 'decreases balance by 100' do
       expect { @account.withdraw(100) }.to change { @account.balance }.by(-100)
     end
   end
