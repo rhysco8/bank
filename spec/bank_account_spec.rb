@@ -43,12 +43,12 @@ RSpec.describe BankAccount do
       expect { @account.print_statement }.to output("credit || debit || balance").to_stdout
     end
 
-    xit 'prints a deposit of 1 and the balance' do
+    it 'prints a deposit of 1 and the balance' do
       @account.deposit(1)
       expect { @account.print_statement }.to output("credit || debit || balance\n1 || || 1").to_stdout
     end
 
-    xit 'prints a deposit of 100 and the balance' do
+    it 'prints a deposit of 100 and the balance' do
       @account.deposit(100)
       expect { @account.print_statement }.to output("credit || debit || balance\n100 || || 100").to_stdout
     end

@@ -20,7 +20,7 @@ class BankAccount
     print 'credit || debit || balance'
     @transactions.each do |transaction|
       puts
-      print transaction
+      print "#{transaction[:amount]} || || #{transaction[:balance]}"
     end
   end
 
