@@ -17,11 +17,8 @@ class BankAccount
   end
 
   def print_statement
-    print 'credit || debit || balance'
-    @transactions.each do |transaction|
-      puts
-      print "#{transaction[:amount]} || || #{transaction[:balance]}"
-    end
+    print_header
+    print_transactions
   end
 
   private
@@ -42,5 +39,16 @@ class BankAccount
       balance: @balance
     }
     @transactions.push(details)
+  end
+
+  def print_header
+    print 'credit || debit || balance'
+  end
+
+  def print_transactions
+    @transactions.each do |transaction|
+      puts
+      print "#{transaction[:amount]} || || #{transaction[:balance]}"
+    end
   end
 end
