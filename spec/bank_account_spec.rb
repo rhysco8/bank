@@ -20,5 +20,9 @@ describe BankAccount do
     it 'decreases balance by 1' do
       expect { @account.withdraw(1) }.to change { @account.balance }.by(-1)
     end
+
+    it "decereases balance by 100" do
+      expect { @account.withdraw(100) }.to change { @account.balance }.by(-100)
+    end
   end
 end
