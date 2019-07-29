@@ -25,4 +25,10 @@ RSpec.describe BankAccount do
       expect { @account.withdraw(100) }.to change { @account.balance }.by(-100)
     end
   end
+
+  describe '#print_statement' do
+    it 'prints the header' do
+      expect { @account.print_statement }.to output("credit || debit || balance").to_stdout
+    end
+  end
 end
