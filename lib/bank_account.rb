@@ -8,6 +8,7 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
+    record_deposit(amount)
   end
 
   def withdraw(amount)
@@ -20,5 +21,16 @@ class BankAccount
       puts
       print transaction
     end
+  end
+
+  private
+
+  def record_deposit(amount)
+    details = {
+      type: :deposit,
+      amount: amount,
+      balance: @balance
+    }
+    @transactions.push(details)
   end
 end
