@@ -54,9 +54,9 @@ class BankAccount
 
   def print_as_deposit_or_withdrawal(transaction)
     if transaction[:type] == :deposit
-      print "#{transaction[:amount]} || || #{transaction[:balance]}"
+      print "#{'%.2f' % transaction[:amount]} || || #{'%.2f' % transaction[:balance]}"
     elsif transaction[:type] == :withdrawal
-      print " || #{transaction[:amount]} || #{transaction[:balance]}"
+      print " || #{'%.2f' % transaction[:amount]} || #{'%.2f' % transaction[:balance]}"
     end
   end
 end
