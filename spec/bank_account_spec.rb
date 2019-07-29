@@ -45,24 +45,24 @@ RSpec.describe BankAccount do
 
     it 'prints a deposit of 1 and the balance' do
       @account.deposit(1)
-      expect { @account.print_statement }.to output("credit || debit || balance\n1 || || 1").to_stdout
+      expect { @account.print_statement }.to output("credit || debit || balance\n1.00 || || 1.00").to_stdout
     end
 
     it 'prints a deposit of 100 and the balance' do
       @account.deposit(100)
-      expect { @account.print_statement }.to output("credit || debit || balance\n100 || || 100").to_stdout
+      expect { @account.print_statement }.to output("credit || debit || balance\n100.00 || || 100.00").to_stdout
     end
 
     it 'prints a withdrawal of 100 and the balance' do
       @account.withdraw(100)
-      expect { @account.print_statement }.to output("credit || debit || balance\n || 100 || -100").to_stdout
+      expect { @account.print_statement }.to output("credit || debit || balance\n || 100.00 || -100.00").to_stdout
     end
 
     it 'prints transactions in reverse chronological order' do
       @account.deposit(100)
       @account.withdraw(50)
       @account.deposit(200)
-      expect { @account.print_statement }.to output("credit || debit || balance\n200 || || 250\n || 50 || 50\n100 || || 100").to_stdout
+      expect { @account.print_statement }.to output("credit || debit || balance\n200.00 || || 250.00\n || 50.00 || 50.00\n100.00 || || 100.00").to_stdout
     end
   end
 end

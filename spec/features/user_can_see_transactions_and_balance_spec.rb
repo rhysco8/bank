@@ -8,9 +8,9 @@ RSpec.describe 'User can view transaction history on bank statement print out' d
     account.withdraw(500)
 
     header = "credit || debit || balance"
-    first = "1000 || || 1000"
-    second = "2000 || || 3000"
-    third = " || 500 || 2500"
+    first = "1000.00 || || 1000.00"
+    second = "2000.00 || || 3000.00"
+    third = " || 500.00 || 2500.00"
 
     expect { account.print_statement }.to output("#{header}\n#{third}\n#{second}\n#{first}").to_stdout
   end
