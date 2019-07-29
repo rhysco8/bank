@@ -13,12 +13,7 @@ class BankAccount
 
   def withdraw(amount)
     @balance -= amount
-    details = {
-      type: :withdrawal,
-      amount: amount,
-      balance: @balance
-    }
-    @transactions.push(details)
+    record_withdrawal(amount)
   end
 
   def print_statement
@@ -34,6 +29,15 @@ class BankAccount
   def record_deposit(amount)
     details = {
       type: :deposit,
+      amount: amount,
+      balance: @balance
+    }
+    @transactions.push(details)
+  end
+
+  def record_withdrawal(amount)
+    details = {
+      type: :withdrawal,
       amount: amount,
       balance: @balance
     }
