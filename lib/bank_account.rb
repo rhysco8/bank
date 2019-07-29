@@ -29,7 +29,7 @@ class BankAccount
       amount: amount,
       balance: @balance
     }
-    @transactions.push(details)
+    @transactions.prepend(details)
   end
 
   def record_withdrawal(amount)
@@ -38,7 +38,7 @@ class BankAccount
       amount: amount,
       balance: @balance
     }
-    @transactions.push(details)
+    @transactions.prepend(details)
   end
 
   def print_header

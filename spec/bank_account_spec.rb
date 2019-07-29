@@ -61,7 +61,8 @@ RSpec.describe BankAccount do
     it 'prints transactions in reverse chronological order' do
       @account.deposit(100)
       @account.withdraw(50)
-      expect { @account.print_statement }.to output("credit || debit || balance\n || 50 || 50\n100 || || 100").to_stdout
+      @account.deposit(200)
+      expect { @account.print_statement }.to output("credit || debit || balance\n200 || || 250\n || 50 || 50\n100 || || 100").to_stdout
     end
   end
 end
