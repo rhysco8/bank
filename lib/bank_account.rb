@@ -48,12 +48,15 @@ class BankAccount
   def print_transactions
     @transactions.each do |transaction|
       puts
-      if transaction[:type] == :deposit
-        print "#{transaction[:amount]} || || #{transaction[:balance]}"
-      elsif transaction[:type] == :withdrawal
-        print " || #{transaction[:amount]} || #{transaction[:balance]}"
-      end
+      print_as_deposit_or_withdrawal(transaction)
+    end
+  end
 
+  def print_as_deposit_or_withdrawal(transaction)
+    if transaction[:type] == :deposit
+      print "#{transaction[:amount]} || || #{transaction[:balance]}"
+    elsif transaction[:type] == :withdrawal
+      print " || #{transaction[:amount]} || #{transaction[:balance]}"
     end
   end
 end
