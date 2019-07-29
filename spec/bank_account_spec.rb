@@ -15,7 +15,7 @@ RSpec.describe BankAccount do
       expect { @account.deposit(100) }.to change { @account.balance }.by(100)
     end
 
-    it 'adds deposit amount and balance to transactions array' do
+    it 'records deposit details' do
       @account.deposit(1)
       details = {type: :deposit, amount: 1, balance: 1}
       expect(@account.transactions).to include(details)
@@ -29,6 +29,12 @@ RSpec.describe BankAccount do
 
     it 'decreases balance by 100' do
       expect { @account.withdraw(100) }.to change { @account.balance }.by(-100)
+    end
+
+    it 'records withdrawal details' do
+      @account.withdraw(1)
+      details = {type: :withdrawal, amount: 1, balance: -1}
+      expect(@account.transactions).to include(details)
     end
   end
 
