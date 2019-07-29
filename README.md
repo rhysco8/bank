@@ -46,8 +46,7 @@ I'll implement features in this order:
 2. Statement print out displays credit, debit and balance
 3. Statement print out is in reverse chronological order
 4. Amounts in statement print out are to 2 decimal places
-5. Transaction date is logged
-6. Statement print out also displays date
+5. Transaction date is logged and displayed on statement print out
 
 ### User stories
 
@@ -97,17 +96,13 @@ So that I can see exact currency amounts,
 I want to see all amounts listed to 2 decimal places.
 ```
 
-#### 5. Transaction date is logged
+#### 5. Transaction date is logged and displayed on statement print out
 
 ```
 As a User,
 So that I can keep track of when I've made deposits and withdrawals,
 I want the date of my transactions to be recorded.
-```
 
-#### 6. Statement print out also displays date
-
-```
 As a User,
 So that I can see when my transactions took place,
 I want my account statement print out to include the date of each transaction.
