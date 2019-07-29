@@ -55,7 +55,11 @@ RSpec.describe BankAccount do
 
     it 'prints a withdrawal of 100 and the balance' do
       @account.withdraw(100)
+<<<<<<< HEAD
       expect { @account.print_statement }.to output("credit || debit || balance\n || 100 || -100").to_stdout
+=======
+      expect { @account.print_statement }.to output("credit || debit || balance\n || 100 || 100").to_stdout
+>>>>>>> b1f9456db3285bd179259c5debe84427f3be4e18
     end
   end
 end
