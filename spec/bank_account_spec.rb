@@ -14,6 +14,12 @@ RSpec.describe BankAccount do
     it 'increases balance by 100' do
       expect { @account.deposit(100) }.to change { @account.balance }.by(100)
     end
+
+    it 'adds deposit amount and balance to transactions array' do
+      @account.deposit(1)
+      details = {type: :deposit, amount: 1, balance: 1}
+      expect(@account.transactions).to include(details)
+    end
   end
 
   describe '#withdraw' do
@@ -29,6 +35,16 @@ RSpec.describe BankAccount do
   describe '#print_statement' do
     it 'prints the header' do
       expect { @account.print_statement }.to output("credit || debit || balance").to_stdout
+    end
+
+    xit 'prints a deposit of 1 and the balance' do
+      @account.deposit(1)
+      expect { @account.print_statement }.to output("credit || debit || balance\n1 || || 1").to_stdout
+    end
+
+    xit 'prints a deposit of 100 and the balance' do
+      @account.deposit(100)
+      expect { @account.print_statement }.to output("credit || debit || balance\n100 || || 100").to_stdout
     end
   end
 end
