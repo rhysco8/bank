@@ -18,7 +18,7 @@ RSpec.describe BankAccount do
 
     it 'records deposit details' do
       @account.deposit(1)
-      details = {type: :deposit, amount: 1, balance: 1}
+      details = {date: @today, type: :deposit, amount: 1, balance: 1}
       expect(@account.transactions).to include(details)
     end
   end
@@ -34,7 +34,7 @@ RSpec.describe BankAccount do
 
     it 'records withdrawal details' do
       @account.withdraw(1)
-      details = {type: :withdrawal, amount: 1, balance: -1}
+      details = {date: @today, type: :withdrawal, amount: 1, balance: -1}
       expect(@account.transactions).to include(details)
     end
   end
