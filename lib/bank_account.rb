@@ -25,6 +25,7 @@ class BankAccount
 
   def record_deposit(amount)
     details = {
+      date: Time.now.strftime("%d/%m/%Y"),
       type: :deposit,
       amount: amount,
       balance: @balance
@@ -34,6 +35,7 @@ class BankAccount
 
   def record_withdrawal(amount)
     details = {
+      date: Time.now.strftime("%d/%m/%Y"),
       type: :withdrawal,
       amount: amount,
       balance: @balance
@@ -42,7 +44,7 @@ class BankAccount
   end
 
   def print_header
-    print 'credit || debit || balance'
+    print 'date || credit || debit || balance'
   end
 
   def print_transactions
@@ -54,9 +56,9 @@ class BankAccount
 
   def print_as_deposit_or_withdrawal(transaction)
     if transaction[:type] == :deposit
-      print "#{'%.2f' % transaction[:amount]} || || #{'%.2f' % transaction[:balance]}"
+      print "#{transaction[:date]} || #{'%.2f' % transaction[:amount]} || || #{'%.2f' % transaction[:balance]}"
     elsif transaction[:type] == :withdrawal
-      print " || #{'%.2f' % transaction[:amount]} || #{'%.2f' % transaction[:balance]}"
+      print "#{transaction[:date]} || || #{'%.2f' % transaction[:amount]} || #{'%.2f' % transaction[:balance]}"
     end
   end
 end
