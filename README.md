@@ -13,16 +13,16 @@ $ cd bank
 ```
 
 ### Run tests
-
+<!--
 ```sh
 $ rspec
-```
+``` -->
 
 ### Run program
-
+<!--
 ```sh
 $ irb -r './lib/bank_account'
-```
+``` -->
 
 ## Approach
 
