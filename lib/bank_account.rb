@@ -1,3 +1,4 @@
+# Account allows oyu to deposit, withdraw and print statement
 class BankAccount
   attr_reader :balance, :transactions
 
@@ -25,7 +26,7 @@ class BankAccount
 
   def record_deposit(amount)
     details = {
-      date: Time.now.strftime("%d/%m/%Y"),
+      date: Time.now.strftime('%d/%m/%Y'),
       type: :deposit,
       amount: amount,
       balance: @balance
@@ -35,7 +36,7 @@ class BankAccount
 
   def record_withdrawal(amount)
     details = {
-      date: Time.now.strftime("%d/%m/%Y"),
+      date: Time.now.strftime('%d/%m/%Y'),
       type: :withdrawal,
       amount: amount,
       balance: @balance
@@ -56,9 +57,13 @@ class BankAccount
 
   def print_as_deposit_or_withdrawal(transaction)
     if transaction[:type] == :deposit
-      print "#{transaction[:date]} || #{'%.2f' % transaction[:amount]} || || #{'%.2f' % transaction[:balance]}"
+      print "#{transaction[:date]} ||"\
+      " #{format('%.2f', transaction[:amount])} || ||"\
+      " #{format('%.2f', transaction[:balance])}"
     elsif transaction[:type] == :withdrawal
-      print "#{transaction[:date]} || || #{'%.2f' % transaction[:amount]} || #{'%.2f' % transaction[:balance]}"
+      print "#{transaction[:date]} || ||"\
+      " #{format('%.2f', transaction[:amount])} ||"\
+      " #{format('%.2f', transaction[:balance])}"
     end
   end
 end
