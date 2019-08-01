@@ -1,4 +1,4 @@
-# Account allows oyu to deposit, withdraw and print statement
+# Account allows you to deposit, withdraw and print statement
 class BankAccount
   attr_reader :balance, :transactions
 
