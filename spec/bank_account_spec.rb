@@ -38,30 +38,30 @@ RSpec.describe BankAccount do
     end
   end
 
-  describe '#print_statement' do
+  describe '#display_statement' do
     it 'prints the header' do
-      expect { @account.print_statement }.to output(
+      expect { @account.display_statement }.to output(
         'date || credit || debit || balance'
       ).to_stdout
     end
 
     it 'prints a deposit of 1 and the balance' do
       @account.deposit(1)
-      expect { @account.print_statement }.to output(
+      expect { @account.display_statement }.to output(
         "date || credit || debit || balance\n#{@today} || 1.00 || || 1.00"
       ).to_stdout
     end
 
     it 'prints a deposit of 100 and the balance' do
       @account.deposit(100)
-      expect { @account.print_statement }.to output(
+      expect { @account.display_statement }.to output(
         "date || credit || debit || balance\n#{@today} || 100.00 || || 100.00"
       ).to_stdout
     end
 
     it 'prints a withdrawal of 100 and the balance' do
       @account.withdraw(100)
-      expect { @account.print_statement }.to output(
+      expect { @account.display_statement }.to output(
         "date || credit || debit || balance\n#{@today} || || 100.00 || -100.00"
       ).to_stdout
     end
@@ -70,7 +70,7 @@ RSpec.describe BankAccount do
       @account.deposit(100)
       @account.withdraw(50)
       @account.deposit(200)
-      expect { @account.print_statement }.to output(
+      expect { @account.display_statement }.to output(
         "date || credit || debit || balance\n"\
         "#{@today} || 200.00 || || 250.00\n"\
         "#{@today} || || 50.00 || 50.00\n"\

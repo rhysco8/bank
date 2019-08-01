@@ -13,7 +13,7 @@ RSpec.describe 'User can view transaction history on statement print out' do
     second = "#{today} || 2000.00 || || 3000.00"
     third = "#{today} || || 500.00 || 2500.00"
 
-    expect { account.print_statement }.to output(
+    expect { account.display_statement }.to output(
       "#{header}\n#{third}\n#{second}\n#{first}"
     ).to_stdout
   end
