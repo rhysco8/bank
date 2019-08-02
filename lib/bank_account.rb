@@ -1,4 +1,4 @@
-require 'statement_printer'
+require_relative 'statement_printer'
 
 # Account allows you to deposit, withdraw and print statement
 class BankAccount
